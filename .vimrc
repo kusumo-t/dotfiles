@@ -1,9 +1,7 @@
-call plug#begin('~/.vim/plugged')
-
-
-" Plugin
-Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+" fish
+if $SHELL =~ '/fish$'
+  set shell=bash
+endif
 
 " leader
 let mapleader = " "
@@ -14,10 +12,10 @@ inoremap jk <ESC>
 " basics
 filetype plugin indent on
 syntax on
-colorscheme molokai
+""colorscheme molokai
 set t_Co=256
 set encoding=utf-8
-set clipboard=unnamedplus
+set clipboard=unnamed,unnamedplus
 
 " binary only, no eol
 set binary noeol
@@ -40,11 +38,5 @@ set list
 set cursorline
 
 " tabstop
-set tabstop=4
+set softtabstop=2
 
-" autocomplete
-" 補完表示時のEnterで改行をしない
-inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
-inoremap <silent><expr> <Enter> coc#pum#visible() ? coc#pum#confirm() : "\<Enter>"
-
-call plug#end()
