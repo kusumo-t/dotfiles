@@ -54,6 +54,22 @@ config.keys = {
     mods = 'CMD|SHIFT',
     action = act.ToggleFullScreen,
   },
+  {
+    key = 'b',
+    mods = 'OPT',
+    action = act.SendKey {
+      key = 'b',
+      mods = 'META',
+    },
+  },
+  {
+    key = 'f',
+    mods = 'OPT',
+    action = act.SendKey {
+      key = 'f',
+      mods = 'META',
+    },
+  },
 }
 
 
